@@ -4,6 +4,8 @@ class Vehicle:
     def __init__(self, model, color):
         self.model = model
         self.color = color
+    def breakDown(self):
+        pass
 
 # Child class
 class Car(Vehicle):
@@ -35,6 +37,10 @@ class Bike(Vehicle):
     def getPaintJob(self, paintColor):
         self.color = paintColor
 
+class Bicycle(Vehicle):
+    def breakDown(self):
+        print("My bicycle broke down!")
+
 # Polymorphism: applies common interface to multiple classes
 def milesReward(automobile, miles):
     automobile.drive(miles)
@@ -58,3 +64,6 @@ myActiva = Bike("Activa 5G", "Yellow")
 
 milesReward(myActiva, 28)
 milesReward(myLambo, 40)
+
+myTrek = Bicycle("Trek", "black")
+myTrek.breakDown()
